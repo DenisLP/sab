@@ -3,7 +3,7 @@
 one:
   vin: MyString
   vehicle: MyString
-  type: 
+  type_of_car: MyString
   year: 1
   make: MyString
   model: MyString
@@ -46,7 +46,7 @@ one:
 two:
   vin: MyString
   vehicle: MyString
-  type: 
+  type_of_car: MyString
   year: 1
   make: MyString
   model: MyString

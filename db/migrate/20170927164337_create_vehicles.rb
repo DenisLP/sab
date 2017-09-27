@@ -3,7 +3,7 @@ class CreateVehicles < ActiveRecord::Migration
     create_table :vehicles do |t|
       t.string :vin
       t.string :vehicle
-      t.string :type
+      t.string :type_of_car
       t.integer :year
       t.string :make
       t.string :model

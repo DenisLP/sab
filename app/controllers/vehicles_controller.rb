@@ -69,6 +69,6 @@ class VehiclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehicle_params
-      params.require(:vehicle).permit(:vin, :vehicle, :type, :year, :make, :model, :body_style, :engine, :mileage_in, :mileage_out, :production_date, :fuel, :exterior_color, :interior_color, :paint_code, :trim_code, :license_plate, :license_plate_state, :license_expiration, :package_1, :package_2, :job_number, :repairable_condition, :primary_impact, :secondary_impact, :drivable_status, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8, :p9, :p10, :p11, :p12, :p13, :impact_note, :prior_damage_note)
+      params.require(:vehicle).permit(:vin, :vehicle, :type_of_car, :year, :make, :model, :body_style, :engine, :mileage_in, :mileage_out, :production_date, :fuel, :exterior_color, :interior_color, :paint_code, :trim_code, :license_plate, :license_plate_state, :license_expiration, :package_1, :package_2, :job_number, :repairable_condition, :primary_impact, :secondary_impact, :drivable_status, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8, :p9, :p10, :p11, :p12, :p13, :impact_note, :prior_damage_note)
     end
 end

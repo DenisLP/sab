@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Chronos - Management</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>STATUS</th>
+      <th>Vin</th>
+      <th>Vehicle</th>
+      <th>Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Production date</th>
+      <th>Exterior </th>
+      <th>Interior </th>
+      <th>Paint </th>
+      <th>Trim </th>
+      <th>License </th>
+      <th>Job number</th>
+      <th>1º impact</th>
+      <th>Drivable</th>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th>P4</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.drivable_status %></td>
+        <td><%= vehicle.vin %></td>
+        <td><%= vehicle.vehicle %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.make %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= vehicle.production_date %></td>
+        <td><%= vehicle.exterior_color %></td>
+        <td><%= vehicle.interior_color %></td>
+        <td><%= vehicle.paint_code %></td>
+        <td><%= vehicle.trim_code %></td>
+        <td><%= vehicle.license_plate %></td>
+        <td><%= vehicle.job_number %></td>
+        <td><%= vehicle.primary_impact %></td>
+        <td><%= vehicle.drivable_status %></td>
+        <td><%= vehicle.p1 %></td>
+        <td><%= vehicle.p2 %></td>
+        <td><%= vehicle.p3 %></td>
+        <td><%= vehicle.p4 %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicle', new_vehicle_path %>
