@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment_date: 2017-09-27 15:37:30
+  date_inspected: 2017-09-27 15:37:30
+  site_type: MyString
+  name: MyString
+  contact: MyString
+  email: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zipcode: MyString
+  phone_1_number: MyString
+  phone_2_number: MyString
+  work_assigned: MyString
+  estimated_days_to_repair: MyString
+  current_assignment_type: MyString
+  original_assignment_type: MyString
+
+two:
+  appointment_date: 2017-09-27 15:37:30
+  date_inspected: 2017-09-27 15:37:30
+  site_type: MyString
+  name: MyString
+  contact: MyString
+  email: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zipcode: MyString
+  phone_1_number: MyString
+  phone_2_number: MyString
+  work_assigned: MyString
+  estimated_days_to_repair: MyString
+  current_assignment_type: MyString
+  original_assignment_type: MyString

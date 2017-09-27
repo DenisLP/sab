@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Appointment date:</strong>
+  <%= @inspection.appointment_date %>
+</p>
+
+<p>
+  <strong>Date inspected:</strong>
+  <%= @inspection.date_inspected %>
+</p>
+
+<p>
+  <strong>Site type:</strong>
+  <%= @inspection.site_type %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @inspection.name %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @inspection.contact %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @inspection.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @inspection.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @inspection.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @inspection.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @inspection.zipcode %>
+</p>
+
+<p>
+  <strong>Phone 1 number:</strong>
+  <%= @inspection.phone_1_number %>
+</p>
+
+<p>
+  <strong>Phone 2 number:</strong>
+  <%= @inspection.phone_2_number %>
+</p>
+
+<p>
+  <strong>Work assigned:</strong>
+  <%= @inspection.work_assigned %>
+</p>
+
+<p>
+  <strong>Estimated days to repair:</strong>
+  <%= @inspection.estimated_days_to_repair %>
+</p>
+
+<p>
+  <strong>Current assignment type:</strong>
+  <%= @inspection.current_assignment_type %>
+</p>
+
+<p>
+  <strong>Original assignment type:</strong>
+  <%= @inspection.original_assignment_type %>
+</p>
+
+<%= link_to 'Edit', edit_inspection_path(@inspection) %> |
+<%= link_to 'Back', inspections_path %>

@@ -1,0 +1,181 @@
+<%= form_for(@vehicle) do |f| %>
+  <% if @vehicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+      <% @vehicle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vin %><br>
+    <%= f.text_field :vin %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle %><br>
+    <%= f.text_field :vehicle %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :make %><br>
+    <%= f.text_field :make %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :body_style %><br>
+    <%= f.text_field :body_style %>
+  </div>
+  <div class="field">
+    <%= f.label :engine %><br>
+    <%= f.text_field :engine %>
+  </div>
+  <div class="field">
+    <%= f.label :mileage_in %><br>
+    <%= f.number_field :mileage_in %>
+  </div>
+  <div class="field">
+    <%= f.label :mileage_out %><br>
+    <%= f.number_field :mileage_out %>
+  </div>
+  <div class="field">
+    <%= f.label :production_date %><br>
+    <%= f.date_select :production_date %>
+  </div>
+  <div class="field">
+    <%= f.label :fuel %><br>
+    <%= f.text_field :fuel %>
+  </div>
+  <div class="field">
+    <%= f.label :exterior_color %><br>
+    <%= f.text_field :exterior_color %>
+  </div>
+  <div class="field">
+    <%= f.label :interior_color %><br>
+    <%= f.text_field :interior_color %>
+  </div>
+  <div class="field">
+    <%= f.label :paint_code %><br>
+    <%= f.text_field :paint_code %>
+  </div>
+  <div class="field">
+    <%= f.label :trim_code %><br>
+    <%= f.text_field :trim_code %>
+  </div>
+  <div class="field">
+    <%= f.label :license_plate %><br>
+    <%= f.text_field :license_plate %>
+  </div>
+  <div class="field">
+    <%= f.label :license_plate_state %><br>
+    <%= f.text_field :license_plate_state %>
+  </div>
+  <div class="field">
+    <%= f.label :license_expiration %><br>
+    <%= f.text_field :license_expiration %>
+  </div>
+  <div class="field">
+    <%= f.label :package_1 %><br>
+    <%= f.text_field :package_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :package_2 %><br>
+    <%= f.text_field :package_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :job_number %><br>
+    <%= f.text_field :job_number %>
+  </div>
+  <div class="field">
+    <%= f.label :repairable_condition %><br>
+    <%= f.text_field :repairable_condition %>
+  </div>
+  <div class="field">
+    <%= f.label :primary_impact %><br>
+    <%= f.text_field :primary_impact %>
+  </div>
+  <div class="field">
+    <%= f.label :secondary_impact %><br>
+    <%= f.text_field :secondary_impact %>
+  </div>
+  <div class="field">
+    <%= f.label :drivable_status %><br>
+    <%= f.text_field :drivable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :p1 %><br>
+    <%= f.text_field :p1 %>
+  </div>
+  <div class="field">
+    <%= f.label :p2 %><br>
+    <%= f.text_field :p2 %>
+  </div>
+  <div class="field">
+    <%= f.label :p3 %><br>
+    <%= f.text_field :p3 %>
+  </div>
+  <div class="field">
+    <%= f.label :p4 %><br>
+    <%= f.text_field :p4 %>
+  </div>
+  <div class="field">
+    <%= f.label :p5 %><br>
+    <%= f.text_field :p5 %>
+  </div>
+  <div class="field">
+    <%= f.label :p6 %><br>
+    <%= f.text_field :p6 %>
+  </div>
+  <div class="field">
+    <%= f.label :p7 %><br>
+    <%= f.text_field :p7 %>
+  </div>
+  <div class="field">
+    <%= f.label :p8 %><br>
+    <%= f.text_field :p8 %>
+  </div>
+  <div class="field">
+    <%= f.label :p9 %><br>
+    <%= f.text_field :p9 %>
+  </div>
+  <div class="field">
+    <%= f.label :p10 %><br>
+    <%= f.text_field :p10 %>
+  </div>
+  <div class="field">
+    <%= f.label :p11 %><br>
+    <%= f.text_field :p11 %>
+  </div>
+  <div class="field">
+    <%= f.label :p12 %><br>
+    <%= f.text_field :p12 %>
+  </div>
+  <div class="field">
+    <%= f.label :p13 %><br>
+    <%= f.text_field :p13 %>
+  </div>
+  <div class="field">
+    <%= f.label :impact_note %><br>
+    <%= f.text_area :impact_note %>
+  </div>
+  <div class="field">
+    <%= f.label :prior_damage_note %><br>
+    <%= f.text_area :prior_damage_note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

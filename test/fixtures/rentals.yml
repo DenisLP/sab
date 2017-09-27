@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rental_company: MyString
+  address_1_main: MyString
+  address_2_main: MyString
+  city: MyString
+  state: MyString
+  zipcode: MyString
+  phone_1_type: MyString
+  phone_1_number: MyString
+  phone_2_type: MyString
+  phone_2_number: MyString
+  phone_3_type: MyString
+  phone_3_number: MyString
+  rental_status: MyString
+  rental_start: MyString
+  coverage_money_per_day: MyString
+  days: MyString
+  approved_by_insurance: false
+
+two:
+  rental_company: MyString
+  address_1_main: MyString
+  address_2_main: MyString
+  city: MyString
+  state: MyString
+  zipcode: MyString
+  phone_1_type: MyString
+  phone_1_number: MyString
+  phone_2_type: MyString
+  phone_2_number: MyString
+  phone_3_type: MyString
+  phone_3_number: MyString
+  rental_status: MyString
+  rental_start: MyString
+  coverage_money_per_day: MyString
+  days: MyString
+  approved_by_insurance: false

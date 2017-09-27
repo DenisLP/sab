@@ -1,0 +1,85 @@
+<%= form_for(@insurance) do |f| %>
+  <% if @insurance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@insurance.errors.count, "error") %> prohibited this insurance from being saved:</h2>
+
+      <ul>
+      <% @insurance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :insurance_company %><br>
+    <%= f.text_field :insurance_company %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_number %><br>
+    <%= f.text_field :policy_number %>
+  </div>
+  <div class="field">
+    <%= f.label :claim_office %><br>
+    <%= f.text_field :claim_office %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_1_number %><br>
+    <%= f.text_field :phone_1_number %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_2_type %><br>
+    <%= f.text_field :phone_2_type %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_2_number %><br>
+    <%= f.text_field :phone_2_number %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_3_type %><br>
+    <%= f.text_field :phone_3_type %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_3_number %><br>
+    <%= f.text_field :phone_3_number %>
+  </div>
+  <div class="field">
+    <%= f.label :adjuster %><br>
+    <%= f.text_field :adjuster %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance_agent %><br>
+    <%= f.text_field :insurance_agent %>
+  </div>
+  <div class="field">
+    <%= f.label :deductible %><br>
+    <%= f.number_field :deductible %>
+  </div>
+  <div class="field">
+    <%= f.label :claim_number %><br>
+    <%= f.text_field :claim_number %>
+  </div>
+  <div class="field">
+    <%= f.label :claim_type %><br>
+    <%= f.text_field :claim_type %>
+  </div>
+  <div class="field">
+    <%= f.label :type_of_loss %><br>
+    <%= f.text_field :type_of_loss %>
+  </div>
+  <div class="field">
+    <%= f.label :loss_date_time %><br>
+    <%= f.datetime_select :loss_date_time %>
+  </div>
+  <div class="field">
+    <%= f.label :payer %><br>
+    <%= f.text_field :payer %>
+  </div>
+  <div class="field">
+    <%= f.label :insurer_prepaid_amount %><br>
+    <%= f.number_field :insurer_prepaid_amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

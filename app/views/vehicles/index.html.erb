@@ -1,0 +1,107 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vin</th>
+      <th>Vehicle</th>
+      <th>Type</th>
+      <th>Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Body style</th>
+      <th>Engine</th>
+      <th>Mileage in</th>
+      <th>Mileage out</th>
+      <th>Production date</th>
+      <th>Fuel</th>
+      <th>Exterior color</th>
+      <th>Interior color</th>
+      <th>Paint code</th>
+      <th>Trim code</th>
+      <th>License plate</th>
+      <th>License plate state</th>
+      <th>License expiration</th>
+      <th>Package 1</th>
+      <th>Package 2</th>
+      <th>Job number</th>
+      <th>Repairable condition</th>
+      <th>Primary impact</th>
+      <th>Secondary impact</th>
+      <th>Drivable status</th>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th>P4</th>
+      <th>P5</th>
+      <th>P6</th>
+      <th>P7</th>
+      <th>P8</th>
+      <th>P9</th>
+      <th>P10</th>
+      <th>P11</th>
+      <th>P12</th>
+      <th>P13</th>
+      <th>Impact note</th>
+      <th>Prior damage note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.vin %></td>
+        <td><%= vehicle.vehicle %></td>
+        <td><%= vehicle.type %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.make %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= vehicle.body_style %></td>
+        <td><%= vehicle.engine %></td>
+        <td><%= vehicle.mileage_in %></td>
+        <td><%= vehicle.mileage_out %></td>
+        <td><%= vehicle.production_date %></td>
+        <td><%= vehicle.fuel %></td>
+        <td><%= vehicle.exterior_color %></td>
+        <td><%= vehicle.interior_color %></td>
+        <td><%= vehicle.paint_code %></td>
+        <td><%= vehicle.trim_code %></td>
+        <td><%= vehicle.license_plate %></td>
+        <td><%= vehicle.license_plate_state %></td>
+        <td><%= vehicle.license_expiration %></td>
+        <td><%= vehicle.package_1 %></td>
+        <td><%= vehicle.package_2 %></td>
+        <td><%= vehicle.job_number %></td>
+        <td><%= vehicle.repairable_condition %></td>
+        <td><%= vehicle.primary_impact %></td>
+        <td><%= vehicle.secondary_impact %></td>
+        <td><%= vehicle.drivable_status %></td>
+        <td><%= vehicle.p1 %></td>
+        <td><%= vehicle.p2 %></td>
+        <td><%= vehicle.p3 %></td>
+        <td><%= vehicle.p4 %></td>
+        <td><%= vehicle.p5 %></td>
+        <td><%= vehicle.p6 %></td>
+        <td><%= vehicle.p7 %></td>
+        <td><%= vehicle.p8 %></td>
+        <td><%= vehicle.p9 %></td>
+        <td><%= vehicle.p10 %></td>
+        <td><%= vehicle.p11 %></td>
+        <td><%= vehicle.p12 %></td>
+        <td><%= vehicle.p13 %></td>
+        <td><%= vehicle.impact_note %></td>
+        <td><%= vehicle.prior_damage_note %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicle', new_vehicle_path %>

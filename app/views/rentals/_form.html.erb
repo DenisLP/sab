@@ -1,0 +1,85 @@
+<%= form_for(@rental) do |f| %>
+  <% if @rental.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
+
+      <ul>
+      <% @rental.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rental_company %><br>
+    <%= f.text_field :rental_company %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1_main %><br>
+    <%= f.text_field :address_1_main %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2_main %><br>
+    <%= f.text_field :address_2_main %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %><br>
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_1_type %><br>
+    <%= f.text_field :phone_1_type %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_1_number %><br>
+    <%= f.text_field :phone_1_number %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_2_type %><br>
+    <%= f.text_field :phone_2_type %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_2_number %><br>
+    <%= f.text_field :phone_2_number %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_3_type %><br>
+    <%= f.text_field :phone_3_type %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_3_number %><br>
+    <%= f.text_field :phone_3_number %>
+  </div>
+  <div class="field">
+    <%= f.label :rental_status %><br>
+    <%= f.text_field :rental_status %>
+  </div>
+  <div class="field">
+    <%= f.label :rental_start %><br>
+    <%= f.text_field :rental_start %>
+  </div>
+  <div class="field">
+    <%= f.label :coverage_money_per_day %><br>
+    <%= f.text_field :coverage_money_per_day %>
+  </div>
+  <div class="field">
+    <%= f.label :days %><br>
+    <%= f.text_field :days %>
+  </div>
+  <div class="field">
+    <%= f.label :approved_by_insurance %><br>
+    <%= f.check_box :approved_by_insurance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,87 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vin: MyString
+  vehicle: MyString
+  type: 
+  year: 1
+  make: MyString
+  model: MyString
+  body_style: MyString
+  engine: MyString
+  mileage_in: 1
+  mileage_out: 1
+  production_date: 2017-09-27
+  fuel: MyString
+  exterior_color: MyString
+  interior_color: MyString
+  paint_code: MyString
+  trim_code: MyString
+  license_plate: MyString
+  license_plate_state: MyString
+  license_expiration: MyString
+  package_1: MyString
+  package_2: MyString
+  job_number: MyString
+  repairable_condition: MyString
+  primary_impact: MyString
+  secondary_impact: MyString
+  drivable_status: MyString
+  p1: MyString
+  p2: MyString
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  p6: MyString
+  p7: MyString
+  p8: MyString
+  p9: MyString
+  p10: MyString
+  p11: MyString
+  p12: MyString
+  p13: MyString
+  impact_note: MyText
+  prior_damage_note: MyText
+
+two:
+  vin: MyString
+  vehicle: MyString
+  type: 
+  year: 1
+  make: MyString
+  model: MyString
+  body_style: MyString
+  engine: MyString
+  mileage_in: 1
+  mileage_out: 1
+  production_date: 2017-09-27
+  fuel: MyString
+  exterior_color: MyString
+  interior_color: MyString
+  paint_code: MyString
+  trim_code: MyString
+  license_plate: MyString
+  license_plate_state: MyString
+  license_expiration: MyString
+  package_1: MyString
+  package_2: MyString
+  job_number: MyString
+  repairable_condition: MyString
+  primary_impact: MyString
+  secondary_impact: MyString
+  drivable_status: MyString
+  p1: MyString
+  p2: MyString
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  p6: MyString
+  p7: MyString
+  p8: MyString
+  p9: MyString
+  p10: MyString
+  p11: MyString
+  p12: MyString
+  p13: MyString
+  impact_note: MyText
+  prior_damage_note: MyText

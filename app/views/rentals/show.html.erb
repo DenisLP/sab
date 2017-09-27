@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rental company:</strong>
+  <%= @rental.rental_company %>
+</p>
+
+<p>
+  <strong>Address 1 main:</strong>
+  <%= @rental.address_1_main %>
+</p>
+
+<p>
+  <strong>Address 2 main:</strong>
+  <%= @rental.address_2_main %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @rental.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @rental.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @rental.zipcode %>
+</p>
+
+<p>
+  <strong>Phone 1 type:</strong>
+  <%= @rental.phone_1_type %>
+</p>
+
+<p>
+  <strong>Phone 1 number:</strong>
+  <%= @rental.phone_1_number %>
+</p>
+
+<p>
+  <strong>Phone 2 type:</strong>
+  <%= @rental.phone_2_type %>
+</p>
+
+<p>
+  <strong>Phone 2 number:</strong>
+  <%= @rental.phone_2_number %>
+</p>
+
+<p>
+  <strong>Phone 3 type:</strong>
+  <%= @rental.phone_3_type %>
+</p>
+
+<p>
+  <strong>Phone 3 number:</strong>
+  <%= @rental.phone_3_number %>
+</p>
+
+<p>
+  <strong>Rental status:</strong>
+  <%= @rental.rental_status %>
+</p>
+
+<p>
+  <strong>Rental start:</strong>
+  <%= @rental.rental_start %>
+</p>
+
+<p>
+  <strong>Coverage money per day:</strong>
+  <%= @rental.coverage_money_per_day %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @rental.days %>
+</p>
+
+<p>
+  <strong>Approved by insurance:</strong>
+  <%= @rental.approved_by_insurance %>
+</p>
+
+<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<%= link_to 'Back', rentals_path %>

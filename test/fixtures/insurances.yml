@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  insurance_company: MyString
+  policy_number: MyString
+  claim_office: MyString
+  phone_1_number: MyString
+  phone_2_type: MyString
+  phone_2_number: MyString
+  phone_3_type: MyString
+  phone_3_number: MyString
+  adjuster: MyString
+  insurance_agent: MyString
+  deductible: 1
+  claim_number: MyString
+  claim_type: MyString
+  type_of_loss: MyString
+  loss_date_time: 2017-09-27 15:37:13
+  payer: MyString
+  insurer_prepaid_amount: 1
+
+two:
+  insurance_company: MyString
+  policy_number: MyString
+  claim_office: MyString
+  phone_1_number: MyString
+  phone_2_type: MyString
+  phone_2_number: MyString
+  phone_3_type: MyString
+  phone_3_number: MyString
+  adjuster: MyString
+  insurance_agent: MyString
+  deductible: 1
+  claim_number: MyString
+  claim_type: MyString
+  type_of_loss: MyString
+  loss_date_time: 2017-09-27 15:37:13
+  payer: MyString
+  insurer_prepaid_amount: 1

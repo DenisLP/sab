@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Inspections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Appointment date</th>
+      <th>Date inspected</th>
+      <th>Site type</th>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Phone 1 number</th>
+      <th>Phone 2 number</th>
+      <th>Work assigned</th>
+      <th>Estimated days to repair</th>
+      <th>Current assignment type</th>
+      <th>Original assignment type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inspections.each do |inspection| %>
+      <tr>
+        <td><%= inspection.appointment_date %></td>
+        <td><%= inspection.date_inspected %></td>
+        <td><%= inspection.site_type %></td>
+        <td><%= inspection.name %></td>
+        <td><%= inspection.contact %></td>
+        <td><%= inspection.email %></td>
+        <td><%= inspection.address %></td>
+        <td><%= inspection.city %></td>
+        <td><%= inspection.state %></td>
+        <td><%= inspection.zipcode %></td>
+        <td><%= inspection.phone_1_number %></td>
+        <td><%= inspection.phone_2_number %></td>
+        <td><%= inspection.work_assigned %></td>
+        <td><%= inspection.estimated_days_to_repair %></td>
+        <td><%= inspection.current_assignment_type %></td>
+        <td><%= inspection.original_assignment_type %></td>
+        <td><%= link_to 'Show', inspection %></td>
+        <td><%= link_to 'Edit', edit_inspection_path(inspection) %></td>
+        <td><%= link_to 'Destroy', inspection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inspection', new_inspection_path %>

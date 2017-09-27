@@ -1,0 +1,185 @@
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contact_type %><br>
+    <%= f.text_field :contact_type %>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br>
+    <%= f.text_field :company %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name_abreviation %><br>
+    <%= f.text_field :first_name_abreviation %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_1_type %><br>
+    <%= f.text_field :phone_1_type %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_1_number %><br>
+    <%= f.text_field :phone_1_number %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_2_type %><br>
+    <%= f.text_field :phone_2_type %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_2_number %><br>
+    <%= f.text_field :phone_2_number %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_3_type %><br>
+    <%= f.text_field :phone_3_type %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_3_number %><br>
+    <%= f.text_field :phone_3_number %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1_type %><br>
+    <%= f.text_field :address_1_type %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1_main %><br>
+    <%= f.text_field :address_1_main %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1_extra %><br>
+    <%= f.text_field :address_1_extra %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1_city %><br>
+    <%= f.text_field :address_1_city %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1_state %><br>
+    <%= f.text_field :address_1_state %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1_zipcode %><br>
+    <%= f.text_field :address_1_zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2_type %><br>
+    <%= f.text_field :address_2_type %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2_main %><br>
+    <%= f.text_field :address_2_main %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2_extra %><br>
+    <%= f.text_field :address_2_extra %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2_city %><br>
+    <%= f.text_field :address_2_city %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2_state %><br>
+    <%= f.text_field :address_2_state %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2_zipcode %><br>
+    <%= f.text_field :address_2_zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :address_3_type %><br>
+    <%= f.text_field :address_3_type %>
+  </div>
+  <div class="field">
+    <%= f.label :address_3_main %><br>
+    <%= f.text_field :address_3_main %>
+  </div>
+  <div class="field">
+    <%= f.label :address_3_extra %><br>
+    <%= f.text_field :address_3_extra %>
+  </div>
+  <div class="field">
+    <%= f.label :address_3_city %><br>
+    <%= f.text_field :address_3_city %>
+  </div>
+  <div class="field">
+    <%= f.label :address_3_state %><br>
+    <%= f.text_field :address_3_state %>
+  </div>
+  <div class="field">
+    <%= f.label :address_3_zipcode %><br>
+    <%= f.text_field :address_3_zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :address_4_type %><br>
+    <%= f.text_field :address_4_type %>
+  </div>
+  <div class="field">
+    <%= f.label :address_4_main %><br>
+    <%= f.text_field :address_4_main %>
+  </div>
+  <div class="field">
+    <%= f.label :address_4_extra %><br>
+    <%= f.text_field :address_4_extra %>
+  </div>
+  <div class="field">
+    <%= f.label :address_4_city %><br>
+    <%= f.text_field :address_4_city %>
+  </div>
+  <div class="field">
+    <%= f.label :address_4_state %><br>
+    <%= f.text_field :address_4_state %>
+  </div>
+  <div class="field">
+    <%= f.label :address_4_zipcode %><br>
+    <%= f.text_field :address_4_zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :estimator %><br>
+    <%= f.text_field :estimator %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br>
+    <%= f.text_field :priority %>
+  </div>
+  <div class="field">
+    <%= f.label :primary_referral %><br>
+    <%= f.text_field :primary_referral %>
+  </div>
+  <div class="field">
+    <%= f.label :secondary_referral %><br>
+    <%= f.text_field :secondary_referral %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Rentals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rental company</th>
+      <th>Address 1 main</th>
+      <th>Address 2 main</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Phone 1 type</th>
+      <th>Phone 1 number</th>
+      <th>Phone 2 type</th>
+      <th>Phone 2 number</th>
+      <th>Phone 3 type</th>
+      <th>Phone 3 number</th>
+      <th>Rental status</th>
+      <th>Rental start</th>
+      <th>Coverage money per day</th>
+      <th>Days</th>
+      <th>Approved by insurance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rentals.each do |rental| %>
+      <tr>
+        <td><%= rental.rental_company %></td>
+        <td><%= rental.address_1_main %></td>
+        <td><%= rental.address_2_main %></td>
+        <td><%= rental.city %></td>
+        <td><%= rental.state %></td>
+        <td><%= rental.zipcode %></td>
+        <td><%= rental.phone_1_type %></td>
+        <td><%= rental.phone_1_number %></td>
+        <td><%= rental.phone_2_type %></td>
+        <td><%= rental.phone_2_number %></td>
+        <td><%= rental.phone_3_type %></td>
+        <td><%= rental.phone_3_number %></td>
+        <td><%= rental.rental_status %></td>
+        <td><%= rental.rental_start %></td>
+        <td><%= rental.coverage_money_per_day %></td>
+        <td><%= rental.days %></td>
+        <td><%= rental.approved_by_insurance %></td>
+        <td><%= link_to 'Show', rental %></td>
+        <td><%= link_to 'Edit', edit_rental_path(rental) %></td>
+        <td><%= link_to 'Destroy', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rental', new_rental_path %>
