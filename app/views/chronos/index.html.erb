@@ -6,3 +6,33 @@
   <%= link_to 'Waiting', chronos_waiting_path, class: 'btn btn-primary btn-lg ' %>
   <%= link_to 'Management', chronos_management_path, class: 'btn btn-primary btn-lg ' %>
 </div>
+
+<div class="row">
+  
+  <%= render 'vehicle_cell', id: '#123', vehicle_status: 'Frame', vin: '5XYPG4A36GG092780', model: 'Sorrento', year: '2016', make: 'Kia', date_start:'10', client_name: 'Denis Presciliano' , job_number: 'QB42', trim_code: 'L / LX', paint_code: 'Gray-456', primary_impact: 'Front', impact_note: 'That was a huge impact. Client ask to fix the back window.', prior_damage_note: 'bla bla bla' %>
+  <%= render 'vehicle_cell', id: '#543', vehicle_status: 'Waiting_Parts', vin: 'JTDBF30K130151105', model: 'Camry', year: '2007', make: 'Toyota', date_start:'5', client_name: 'Ester Beatriz', job_number: 'QB43', trim_code: 'SEL 2.0', paint_code: 'White-325', primary_impact: 'Left Front', impact_note: 'The car overturned.', prior_damage_note: 'bla bla bla'  %>
+  <%= render 'vehicle_cell', id: '#890', vehicle_status: 'Paint', vin: '4S3BH675546633005', model: 'Legacy', year: '2004', make: 'Subaru', date_start:'3', client_name: 'Carolina Diniz' , job_number: 'QB44', trim_code: 'WRX', paint_code: 'Blue-795', primary_impact: 'Back', impact_note: 'This car was flooded. This car was flooded. The customer asked to change all the seats and the ceiling lining.', prior_damage_note: 'bla bla bla' %>
+  <%= render 'vehicle_cell', id: '#274', vehicle_status: 'Frame', vin: 'JTDBF30K130151105', model: 'Camry', year: '2009', make: 'Toyota', date_start:'2', client_name: 'Joelson Leite', job_number: 'QB45', trim_code: 'SEL 2.0', paint_code: 'Gold-274', primary_impact: 'Left Front', impact_note: 'The has a front colition and overturned.', prior_damage_note: 'bla blu bla'  %>
+
+  
+  <div class="col-md-2 chronos_line" id='Disassembly' ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+    <label>Disassembly</label>
+  </div>
+  
+  <div class="col-md-2 chronos_line" id="Waiting_Parts" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+    <label>Waiting Parts</label>
+  </div>
+  <div class="col-md-2 chronos_line" id="Frame" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+    <label>Frame</label>
+  </div>
+  <div class="col-md-2 chronos_line" id="Paint" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+    <label>Paint</label>
+  </div>
+  <div class="col-md-2 chronos_line" id="Assembling" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+    <label>Assembling</label>
+  </div>
+  <div class="col-md-2 chronos_line" id="Delivering" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+    <label>Delivering</label>
+  </div>
+  
+</div>

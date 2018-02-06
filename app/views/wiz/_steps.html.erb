@@ -1,0 +1,41 @@
+<div class="col-md-3">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="" disabled <%= step1_status %>>
+      1. Customer info
+    </label>
+  </div>   
+</div>
+
+<div class="col-md-3">
+  <div class="checkbox disabled">
+    <label>
+      <input type="checkbox" value="" disabled <%= step2_status %>>
+      2. Vehicle
+    </label>
+  </div>   
+</div>
+
+<div class="col-md-3">
+  <div class="checkbox disabled">
+    <label>
+      <input type="checkbox" value="" disabled <%= step3_status %>>
+      3. Photos
+    </label>
+  </div>   
+</div>
+
+<div class="col-md-3">
+  <div class="checkbox disabled">
+    <label>
+      <input type="checkbox" value="" disabled <%= step4_status %>>
+      4. Insurance & More
+    </label>
+  </div>   
+</div>
+
+<div class="col-md-12">
+  <div class="progress" style="height: 30px;">
+    <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: <%= percentage %>" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> <%= percentage %> </div>
+  </div>
+</div>

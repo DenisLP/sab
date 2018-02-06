@@ -1,0 +1,64 @@
+<div class="row">
+  <!--< %= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked'  %>-->
+  <%= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: '', step4_status: '', percentage: '50%'  %>
+</div>
+
+<!--<div class="row justify-content-center">-->
+<div class="row ">
+  <div class="col-md-12">
+    
+    <%= form_for @vehicle, url: 'step3', method: 'get' do |f| %>
+      
+      <% if @vehicle.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+          <ul>
+          <% @vehicle.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      
+    
+      <!-- Select vehicle -->
+      <div class="row">
+          <h2>I am here because:</h2>
+          
+          <button class='btn btn-lg btn-block btn-success btn btn-outline-secondary'>I had a accident</button>
+          <h2>OR</h2>
+          
+          <a class='btn btn-lg btn-block btn-success btn btn-outline-secondary' href='/wiz/other_services'>I need other services</a>
+          
+          
+      </div>
+    
+      <!-- LINE 1 -->
+      
+      <br><br><br><br><br><br>
+      
+      <div class="row">
+      
+        <div class="col-md-4">
+          <button type="button" onclick="window.location='/wiz/step2?phone_1_number=774-204-4602';" class="btn btn-lg btn-block btn-success btn btn-outline-secondary" >< Back</button>
+        </div>
+      
+        <div class="col-md-8">
+          <!--<button type="submit" class="btn btn-lg btn-block btn-success btn btn-outline-success" >Next ></button>-->
+        </div>
+        
+      </div>
+      
+      <input id='agent_pin' name='agent_pin' class='form-control' type='text' value='4242'></input><hr>
+      <input class='form-control' id='contact_id' name='contact[id]' type='number' value='<%= @contact['id'] %>' readonly/><br>
+      <input class='form-control' id='contact_first_name' name='contact[first_name]' type='text' value='<%= @contact['first_name'] %>' readonly/><br>
+      <input class='form-control' id='contact_phone_1_number' name='contact[phone_1_number]' type='text' value='<%= @contact['phone_1_number'] %>' readonly/><br>
+      <input class='form-control' id='vehicle_vin' name='vehicle[vin]' type='text' value='<%= @vehicle['vin'] %>' readonly/><br>
+      
+      
+      
+    <% end %>  
+  </div>
+</div>

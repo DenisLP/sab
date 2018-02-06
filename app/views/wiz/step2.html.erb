@@ -1,0 +1,144 @@
+<div class="row">
+  <!--< %= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked'  %>-->
+  <%= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: '', step4_status: '', percentage: '50%'  %>
+</div>
+
+<!--<div class="row justify-content-center">-->
+<div class="row ">
+  <div class="col-md-12">
+    
+    <%= form_for @vehicle, url: 'step2', method: 'get' do |f| %>
+      
+      <% if @vehicle.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+          <ul>
+          <% @vehicle.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+      <!-- Select vehicle -->
+      <div class="row">
+          <div class="field">
+            <label>Select your car</label>
+            <select id='car_selection' class='form-control' onchange='step2_show_vehicle_info'>
+              <option>See cars</option>
+              <option>2016 Kia Sorento</option>
+              <option>2003 Toyota Camry</option>
+              <option>2014 Subaru Impreza</option>
+            </select>
+            <br>OR<br><br>
+            <span id='car_selection_add_new' class='btn btn-lg' onclick='showCarFields()'>Add a new one</span>
+          </div>
+      </div>
+    
+      <!-- LINE 1 -->
+      <div id='step2_vehicle_info' class="row" style="display: none;">
+        <div class="vehicle_info_column_one col-md-6 d-inline">
+          
+          
+          <div class="field">
+            <label>Message: <%= @message %></label><br>
+            <sub>5XYPG4A36GG092780</sub>
+            <input class='form-control' id='contact_id' name='contact[id]' type='number' value='<%= @contact['id'] %>' readonly/><br>
+            <input class='form-control' id='contact_first_name' name='contact[first_name]' type='text' value='<%= @contact['first_name'] %>' readonly/><br>
+            <input class='form-control' id='contact_phone_1_number' name='contact[phone_1_number]' type='text' value='<%= @contact['phone_1_number'] %>' readonly/><br>
+            <%= f.text_field :vin, class: 'form-control', pattern: '^(([a-h,A-H,j-n,J-N,p-z,P-Z,0-9]{9})([a-h,A-H,j-n,J-N,p,P,r-t,R-T,v-z,V-Z,0-9])([a-h,A-H,j-n,J-N,p-z,P-Z,0-9])(\d{6}))$', maxlength: '17', title: 'Wrong VIN: 17 Characters.', value: '5XYPG4A36GG092780'%>
+            <%= f.button 'Decode VIN', class: 'btn btn-lg btn-block btn-success btn btn-outline-success', type: 'submit' %>
+          </div>
+          <div class="field">
+            <%= f.label :year %><br>
+            <%= f.number_field :year, class: 'form-control' %>
+          </div>
+          <div class="field">
+            <%= f.label :make %><br>
+            <%= f.text_field :make, class: 'form-control' %>
+          </div>
+          <div class="field">
+            <%= f.label :model %><br>
+            <%= f.text_field :model, class: 'form-control' %>
+          </div>
+          <div class="field">
+            <%= f.label :engine %><br>
+            <%= f.text_field :engine, class: 'form-control' %>
+          </div>
+          <div class="field">
+            <%= f.label :trim_code %><br>
+            <%= f.text_field :trim_code, class: 'form-control' %>
+          </div>
+          <!--<div class="field">-->
+          <!--  < %= f.label :fuel %><br>-->
+          <!--  < %= f.text_field :fuel, class: 'form-control' %>-->
+          <!--</div>-->
+          
+        </div>
+        
+        
+        
+      <% end %>
+        <% if @vin %>
+          <div class="agent_info_required">
+          <div class="col-md-12">
+            <form class="new_vehicle" id="new_vehicle" action="step21" accept-charset="UTF-8" method="get">
+            <button type="submit" class="btn btn-lg btn-block btn-success btn btn-outline-success" >Next ></button>
+            <hr>
+            <label>Agent Pin</label><br>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <input id='agent_pin' name='agent_pin' class='form-control' type='text' value='4242'></input><hr>
+            <input class='form-control' id='contact_id' name='contact[id]' type='number' value='<%= @contact['id'] %>' readonly/><br>
+            <input class='form-control' id='contact_first_name' name='contact[first_name]' type='text' value='<%= @contact['first_name'] %>' readonly/><br>
+            <input class='form-control' id='contact_phone_1_number' name='contact[phone_1_number]' type='text' value='<%= @contact['phone_1_number'] %>' readonly/><br>
+            <input class='form-control' id='vehicle_vin' name='vehicle[vin]' type='text' value='<%= @vehicle['vin'] %>' readonly/><br>
+            
+            </form>
+          </div>
+        </div>
+        <% end %>
+        
+        <div class="vehicle_info_column_two">
+          <div class="col-md-6 d-inline">
+            <!--<div class="field">-->
+              <!--< %= f.label :production_date %><br>-->
+              <!--< %= f.date_select :production_date, class: 'form-control' %>-->
+            <!--</div>-->
+            <!--<div class="field">-->
+            <!--  < %= f.label :fuel %><br>-->
+            <!--  < %= select_tag :fuel, options_for_select([['1/4', 0],['2/4', 1],['3/4', 2],['4/4', 3]]), class: 'form-control' %>-->
+            <!--</div>-->
+            <!--<div class="field">-->
+            <!--  < %= f.label :exterior_color %><br>-->
+            <!--  < %= f.text_field :exterior_color, class: 'form-control' %>-->
+            <!--</div>-->
+            <!--<div class="field">-->
+            <!--  < %= f.label :interior_color %><br>-->
+            <!--  < %= f.text_field :interior_color, class: 'form-control' %>-->
+            <!--</div>-->
+            <!--<div class="field">-->
+            <!--  < %= f.label :paint_code %><br>-->
+            <!--  < %= f.text_field :paint_code, class: 'form-control' %>-->
+            <!--</div>-->
+            <!--<div class="field">-->
+            <!--  < %= f.label :license_plate %><br>-->
+            <!--  < %= f.text_field :license_plate, class: 'form-control' %>-->
+            <!--</div>-->
+            <!--<div class="field">-->
+            <!--  < %= f.label :license_plate_state %><br>-->
+            <!--  < %= f.text_field :license_plate_state, class: 'form-control' %>-->
+            <!--</div>-->
+          </div>
+        </div>
+        <!--END LINE 1 -->
+  
+      </div>
+      <hr>
+      <br>
+  
+      
+    
+  </div>
+</div>
+
+

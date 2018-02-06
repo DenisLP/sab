@@ -1,0 +1,302 @@
+<div class="row">
+  <!--< %= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked'  %>-->
+  <%= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked', percentage: '90%'  %>
+</div>
+
+
+<!--<div class="row justify-content-center">-->
+<div class="row ">
+  <div class="col-md-12">
+    <%= form_for @insurance, url: 'step5' do |f| %>
+    <% if @insurance.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@insurance.errors.count, "error") %> prohibited this insurance from being saved:</h2>
+  
+        <ul>
+        <% @insurance.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    
+    <!-- LINE 1 -->
+    <div class="row">
+      <div class="vehicle_info col-md-6 d-inline">
+
+        <div class="field">
+          <%= f.label :insurance_company %><br>
+          <%= f.text_field :insurance_company, class: 'form-control'  %>
+        </div>
+        
+        <div class="row">
+          <div class="field col-md-6">
+            <%= f.label :claim_number %><br>
+            <%= f.text_field :claim_number, class: 'form-control'  %>
+          </div>
+          <div class="field col-md-6">
+            <%= f.label :policy_number %><br>
+            <%= f.text_field :policy_number, class: 'form-control'  %>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="field col-md-6">
+            <%= f.label :adjuster %><br>
+            <%= f.text_field :adjuster, class: 'form-control'  %>
+          </div>
+          <div class="field col-md-6">
+            <%= f.label :insurance_agent %><br>
+            <%= f.text_field :insurance_agent, class: 'form-control'  %>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="field col-md-6">
+            <%= f.label :deductible %><br>
+            <%= f.number_field :deductible, class: 'form-control'  %>
+          </div>
+          
+          <div class="field col-md-6">
+            <%= f.label :claim_type %><br>
+            <%= f.text_field :claim_type, class: 'form-control'  %>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="field col-md-6">
+            <%= f.label :type_of_loss %><br>
+            <%= f.text_field :type_of_loss, class: 'form-control'  %>
+          </div>
+          <div class="field col-md-6">
+            <%= f.label :loss_date_time %><br>
+            <%= f.datetime_select :loss_date_time, class: 'form-control custom-select'  %>
+          </div>
+        </div>
+        
+          <div class="field">
+            <%= f.label :payer %><br>
+            <%= f.text_field :payer, class: 'form-control'  %>
+          </div>
+          
+        <div class="row">
+          <div class="field col-md-6">
+            <%= f.label :insurer_prepaid_amount %><br>
+            <%= f.number_field :insurer_prepaid_amount, class: 'form-control'  %>
+          </div>
+          <div class="field col-md-6">
+            <%= f.label :claim_office %><br>
+            <%= f.text_field :claim_office, class: 'form-control'  %>
+          </div>
+        </div>
+        
+      </div>
+      <!-- END LINE 1 -->
+      
+      <!-- END LINE 2 -->
+      <div class="phone_contact col-md-6 d-inline">
+              
+        <label class='display-4'><%= I18n.t :customer_phone %></label><br>
+        
+        <div class="row">
+          <div class="field col-md-2 ">
+            <%= f.label I18n.t :phone_1_type %><br>
+            <%= select_tag :phone_1_type, options_for_select([['Home', 0], ['Work', 1],['Office', 2], ['Other', 3]], 0), class: 'form-control ' %>
+          </div>
+          <div class="field col-md-10">
+            <%= f.label I18n.t :phone_1_number %><br>
+            <%= f.text_field :phone_1_number, class: 'form-control ' %>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="field col-md-2 ">
+            <%= f.label I18n.t :phone_2_type %><br>
+            <%= select_tag :phone_2_type, options_for_select([['Home', 0], ['Work', 1],['Office', 2], ['Other', 3]], 1), class: 'form-control ' %>
+          </div>
+          <div class="field col-md-10">
+            <%= f.label I18n.t :phone_2_number %><br>
+            <%= f.text_field :phone_2_number, class: 'form-control ' %>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="field col-md-2 ">
+            <%= f.label I18n.t :phone_3_type %><br>
+            <%= select_tag :phone_3_type, options_for_select([['Home', 0], ['Work', 1],['Office', 2], ['Other', 3]], 2), class: 'form-control ' %>
+          </div>
+          <div class="field col-md-10">
+            <%= f.label I18n.t :phone_3_number %><br>
+            <%= f.text_field :phone_3_number, class: 'form-control ' %>
+          </div>
+        </div>
+        <br>
+        
+        <div class="field">
+          <strong><%= label_tag 'Rental Company' %></strong><br>
+          <%= radio_button_tag(:rental, "Enterprise Rent-A-Car") %>
+          <%= label_tag(:rental, "Enterprise Rent-A-Car") %><br>
+          <%= radio_button_tag(:rental, "Hertz Car Rental") %>
+          <%= label_tag(:rental, "Hertz Car Rental") %><br>
+          <%= radio_button_tag(:rental, "Budget Rent A Car") %>
+          <%= label_tag(:rental, "Budget Rent A Car") %><br>
+          <%= radio_button_tag(:rental, "E-Z Rent-A-Car") %>
+          <%= label_tag(:rental, "E-Z Rent-A-Car") %><br>
+          <%= radio_button_tag(:rental, "Alamo Rent A Car") %>
+          <%= label_tag(:rental, "Alamo Rent A Car") %><br>
+          <%= radio_button_tag(:rental, "Avis Rent A Car") %>
+          <%= label_tag(:rental, "Avis Rent A Car") %><br>
+          <%= radio_button_tag(:rental, "Thrifty Car Rental") %>
+          <%= label_tag(:rental, "Thrifty Car Rental") %><br>
+          <%= radio_button_tag(:rental, "Dollar Rent a Car") %>
+          <%= label_tag(:rental, "Dollar Rent a Car") %><br>
+          <%= radio_button_tag(:rental, "National Car Rental") %>
+          <%= label_tag(:rental, "National Car Rental") %><br>
+          <%= radio_button_tag(:rental, "Payless Car Rental") %>
+          <%= label_tag(:rental, "Payless Car Rental") %><br>
+          <%= radio_button_tag(:rental, "Fox Rent a Car") %>
+          <%= label_tag(:rental, "Fox Rent a Car") %><br>
+          <br>
+          <hr>
+          <br>
+        </div>
+        
+
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="">
+            Agree with Non-Disclosure Terms
+          </label>
+        </div>
+        
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="">
+            Agree with Confidentiality Agreement
+          </label>
+        </div>
+        
+      </div>
+        
+      <!-- END LINE 2 -->
+      
+    </div>
+    
+    <hr>
+    <br>
+    
+    <div class="row">
+
+      <div class="col-md-12">
+        
+        <div class="checkbox">
+          <label>
+            <input id='auth_1' onclick='enablePrintDocuments()' type="checkbox" value="">
+            <span>Authorization to Detail</span>
+            <a href='#'>(Read document)</a>
+          </label>
+        </div>   
+        
+        <div class="checkbox">
+          <label>
+            <input id='auth_2' onclick='enablePrintDocuments()' type="checkbox" value="">
+            <a>Authorization to Repair Form</a>
+            <a href='#'>(Read document)</a>
+          </label>
+        </div>   
+        
+        <div class="checkbox">
+          <label>
+            <input id='auth_3' onclick='enablePrintDocuments()' type="checkbox" value="">
+            <a>Defamation Settlement Between</a>
+            <a href='#'>(Read document)</a>
+          </label>
+        </div>   
+        
+        <div class="checkbox">
+          <label>
+            <input id='auth_4' onclick='enablePrintDocuments()' type="checkbox" value="">
+            <a>Repair Authorization Form</a>
+            <a href='#'>(Read document)</a>
+          </label>
+        </div>   
+        
+        <div class="checkbox">
+          <label>
+            <input id='auth_5' onclick='enablePrintDocuments()' type="checkbox" value="">
+            <a>Commonwealth of Massachusetts Motor Vehicle Crash Operator Report</a>
+            <a href='#'>(Read document)</a>
+          </label>
+        </div>   
+        
+        
+        <h2>I Agree with ALL terms and conditions selected.</h2>
+        <p>This Agreement shall be governed by the laws of the jurisdiction in which the Buyer is located (or if the Buyer is based in more than one country, the country in which its headquarters are located) (the "Territory") and the parties agree to submit disputes arising out of or in connection with this Agreement to the non-exclusive of the courts in the Territory. </p>
+        
+        <div class="checkbox">
+          <label>
+            <input id='auth_6' onclick='acceptAllAuths()' type="checkbox" value="">
+            <a>Accept All</a>
+          </label>
+          
+          <div id="coords"></div>
+          <div id="touchzone"></div>
+          <canvas id="mycanvas" width="662" height="373" style="border: 1px solid #ccc">
+            Canvas element not supported<br />
+          </canvas>
+          <center><p>Sign with your finger.</p></center>
+        </div>   
+        
+      
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <button type="button" onclick="window.history.back();" class="btn btn-lg btn-block btn-success btn btn-outline-secondary" >< Back</button>
+      </div>
+      <div class="col-md-8">
+        <button type="submit" class="btn btn-lg btn-block btn-success btn btn-outline-success" >Next ></button>
+      </div>
+    </div>
+    
+  <% end %>
+  </div>
+</div>
+
+
+	<script>
+	  function decode() {
+	  	window.sdkAsyncInit = function() {
+	    	// Instantiate the SDK
+  			var res = new EDMUNDSAPI('mnequvu6w5rd2ujk59j794bv');
+  			// Optional parameters
+  			var options = {
+  				"manufacturerCode": "3548"
+  			};
+  			// Callback function to be called when the API response is returned
+  			function success(res) {
+  				var body = document.getElementById('vehicle_make');
+  				body.innerHTML = "The car make is: " + res.styleHolder[0].makeName;
+  			}
+  			// Oops, Houston we have a problem!
+  			function fail(data) {
+  				console.log('EDMUNDS fail: ' + data);
+  			}
+  			// Fire the API call
+  			res.api('/api/vehicle/v2/vins/4T1BK1EB6DU056165', options, success, fail);
+  		    // Additional initialization code such as adding Event Listeners goes here
+  	  };
+  	  console.log('Decoding...');
+	  }
+	  
+	  // Load the SDK asynchronously
+	  (function(d, s, id){
+	     	var js, sdkjs = d.getElementsByTagName(s)[0];
+	     	if (d.getElementById(id)) {return;}
+	     	js = d.createElement(s); js.id = id;
+	     	js.src = "path/to/sdk/file";
+	     	sdkjs.parentNode.insertBefore(js, sdkjs);
+	   }(document, 'script', 'edmunds-jssdk'));
+	</script>

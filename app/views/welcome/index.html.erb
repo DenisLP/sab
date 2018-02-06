@@ -1,0 +1,108 @@
+<!-- LOGIN -->
+    <div class='row customer_login'>
+      <div class="col-md-12">
+        <br><br><br>
+        <center>
+          <h3>Activate device</h3>
+          <label>User</label>
+          <input type='text' class=' form-control' value='Denis' >
+          <br><br>
+          <label>Pass</label>
+          <input type='password' class=' form-control' value='' >
+          <br><br>
+          <input type='button' onclick='login()' value='Login' >
+        </center>
+        <br><br><br>
+      </div>
+      <hr/>
+    </div>
+    <!-- END LOGIN -->
+
+
+
+
+
+
+
+<div class="row">
+  
+  <div class="col-md-2"></div>
+  
+  <div class="col-md-8">
+    
+    <!-- Logo -->
+    <div class="row  text-center">
+      
+      <div class="col-md-12">
+        <div>Welcome to Simon's Auto Body System</div>
+        <br>
+        <img height='150px' src='<%= asset_path 'logo.jpg' %>'></img>
+      </div>
+      <hr>
+    
+      <!-- Language Options -->
+      <!--<div class="row">-->
+      <form class="col-md-12 text-center" action='wiz/step1' method='post'>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div class="col-md-12">
+          <br><br>
+          <input type='radio' class='form-control'></input>
+          <label for='phone'>Search by <strong>PHONE</strong></label>
+          <input type='tel' id='contact_phone_1_number' name='contact[phone_1_number]' value='774-204-4602' class='form-control' style='text-align: center' ></input>
+        </div>
+        <div class="col-md-12">
+          <br><br>
+          <input type='radio' class='form-control'></input>
+          <label for='phone'>Search by <strong>PLATE</strong></label>
+          <input type='tel' id='contact_plate' name='contact[plate]' value='362wt1' class='form-control' style='text-align: center' ></input>
+        </div>
+        <div class="col-md-12">
+          <br><br>
+          <input type='radio' class='form-control'></input>
+          <label for='phone'>Search by <strong>VIN</strong></label>
+          <input type='tel' id='contact_vin' name='contact[vin]' value='5XYPG4A36GG092780' class='form-control' style='text-align: center' ></input>
+        </div>
+        
+        <br><br><br>
+        
+        <div class="col-md-12"><strong>Choose your language: </strong></div>
+        <br><br>
+        <div class="row">
+          <div class="col-md-4">
+            <img src='<%= asset_path 'flag-us.png' %>'></img>
+            <br></br>
+            <input type='radio' name='lang' class='form-control' value='English' checked>English</input>
+          </div>
+          
+          <div class="col-md-4">
+            <img src='<%= asset_path 'flag-brazil.png' %>'></img>
+            <br></br>
+            <input type='radio' name='lang' class='form-control' value='Portuguese'>Portuguese</input>
+          </div>
+          
+          <div class="col-md-4">
+            <img src='<%= asset_path 'flag-spain.png' %>'></img>
+            <br></br>
+            <input type='radio' name='lang' class='form-control' value='Spanish'>Spanish</input>
+          </div>
+        </div>
+        
+        <br><br>
+        
+        <div class="col-md-12">
+          <input type="submit" class="btn btn-lg btn-block btn-success btn btn-outline-success" value='Next >'></input>
+        </div>
+      
+      </form>
+      
+      <br><br><br>
+      
+      <!-- Red bottom line -->
+      <div class="red-line"></div>
+    
+    
+    </div>
+    
+  </div>
+  
+</div>

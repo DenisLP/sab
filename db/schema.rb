@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927164337) do
+ActiveRecord::Schema.define(version: 20171116063808) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "contact_type"
@@ -103,6 +103,31 @@ ActiveRecord::Schema.define(version: 20170927164337) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "content_type"
+  end
+
+  create_table "pos", force: :cascade do |t|
+    t.integer  "contact_id"
+    t.integer  "vehicle_id"
+    t.integer  "inspection_id"
+    t.integer  "rentals_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "pos", ["contact_id"], name: "index_pos_on_contact_id"
+  add_index "pos", ["inspection_id"], name: "index_pos_on_inspection_id"
+  add_index "pos", ["rentals_id"], name: "index_pos_on_rentals_id"
+  add_index "pos", ["vehicle_id"], name: "index_pos_on_vehicle_id"
+
   create_table "rentals", force: :cascade do |t|
     t.string   "rental_company"
     t.string   "address_1_main"
@@ -169,6 +194,64 @@ ActiveRecord::Schema.define(version: 20170927164337) do
     t.text     "prior_damage_note"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "p1_file_name"
+    t.string   "p1_content_type"
+    t.integer  "p1_file_size"
+    t.datetime "p1_updated_at"
+    t.string   "p2_file_name"
+    t.string   "p2_content_type"
+    t.integer  "p2_file_size"
+    t.datetime "p2_updated_at"
+    t.string   "p3_file_name"
+    t.string   "p3_content_type"
+    t.integer  "p3_file_size"
+    t.datetime "p3_updated_at"
+    t.string   "p4_file_name"
+    t.string   "p4_content_type"
+    t.integer  "p4_file_size"
+    t.datetime "p4_updated_at"
+    t.string   "p5_file_name"
+    t.string   "p5_content_type"
+    t.integer  "p5_file_size"
+    t.datetime "p5_updated_at"
+    t.string   "p6_file_name"
+    t.string   "p6_content_type"
+    t.integer  "p6_file_size"
+    t.datetime "p6_updated_at"
+    t.string   "p7_file_name"
+    t.string   "p7_content_type"
+    t.integer  "p7_file_size"
+    t.datetime "p7_updated_at"
+    t.string   "p8_file_name"
+    t.string   "p8_content_type"
+    t.integer  "p8_file_size"
+    t.datetime "p8_updated_at"
+    t.string   "p9_file_name"
+    t.string   "p9_content_type"
+    t.integer  "p9_file_size"
+    t.datetime "p9_updated_at"
+    t.string   "p10_file_name"
+    t.string   "p10_content_type"
+    t.integer  "p10_file_size"
+    t.datetime "p10_updated_at"
+    t.string   "p11_file_name"
+    t.string   "p11_content_type"
+    t.integer  "p11_file_size"
+    t.datetime "p11_updated_at"
+    t.string   "p12_file_name"
+    t.string   "p12_content_type"
+    t.integer  "p12_file_size"
+    t.datetime "p12_updated_at"
+    t.string   "p13_file_name"
+    t.string   "p13_content_type"
+    t.integer  "p13_file_size"
+    t.datetime "p13_updated_at"
+    t.string   "status"
+    t.integer  "po"
   end
 
 end

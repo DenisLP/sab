@@ -7,6 +7,7 @@ class ChronosController < ApplicationController
   end
 
   def detailing
+    @vehicles = Vehicle.all
   end
 
   def painting

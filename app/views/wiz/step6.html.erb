@@ -1,0 +1,146 @@
+<div class="row">
+  <!--< %= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked'  %>-->
+  <%= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked', percentage: '100%'  %>
+</div>
+
+<hr>
+<div class="row">
+  
+  
+  <div class="col-md-2">
+    <div class="card">
+      <h5 class="card-header">Authorization to Detail</h5>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <a href="#" class="btn btn-primary">Read</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-2">
+    <div class="card">
+      <h5 class="card-header">Authorization to Repair Form</h5>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <a href="#" class="btn btn-primary">Read</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-2">
+    <div class="card">
+      <h5 class="card-header">Defamation Settlement Between</h5>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <a href="#" class="btn btn-primary">Read</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-2">
+    <div class="card">
+      <h5 class="card-header">Repair Authorization Form</h5>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <a href="#" class="btn btn-primary">Read</a>
+      </div>
+    </div>
+  </div>
+    
+  <div class="col-md-2">
+    <div class="card">
+      <h6 class="card-header">Commonwealth of Massachusetts Motor Vehicle Crash Operator Report</h6>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <a href="#" class="btn btn-primary">Read</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<!--END ROW-->
+
+
+<div class="col-md-12">
+  
+  <div class="checkbox">
+    <label>
+      <input id='auth_1' onclick='enablePrintDocuments()' type="checkbox" value="">
+      <span>Authorization to Detail</span>
+      <a href='#'>(Read document)</a>
+    </label>
+  </div>   
+  
+  <div class="checkbox">
+    <label>
+      <input id='auth_2' onclick='enablePrintDocuments()' type="checkbox" value="">
+      <a>Authorization to Repair Form</a>
+      <a href='#'>(Read document)</a>
+    </label>
+  </div>   
+  
+  <div class="checkbox">
+    <label>
+      <input id='auth_3' onclick='enablePrintDocuments()' type="checkbox" value="">
+      <a>Defamation Settlement Between</a>
+      <a href='#'>(Read document)</a>
+    </label>
+  </div>   
+  
+  <div class="checkbox">
+    <label>
+      <input id='auth_4' onclick='enablePrintDocuments()' type="checkbox" value="">
+      <a>Repair Authorization Form</a>
+      <a href='#'>(Read document)</a>
+    </label>
+  </div>   
+  
+  <div class="checkbox">
+    <label>
+      <input id='auth_5' onclick='enablePrintDocuments()' type="checkbox" value="">
+      <a>Commonwealth of Massachusetts Motor Vehicle Crash Operator Report</a>
+      <a href='#'>(Read document)</a>
+    </label>
+  </div>   
+  
+  
+  <h2>I Agree with ALL terms and conditions selected.</h2>
+  <p>This Agreement shall be governed by the laws of the jurisdiction in which the Buyer is located (or if the Buyer is based in more than one country, the country in which its headquarters are located) (the "Territory") and the parties agree to submit disputes arising out of or in connection with this Agreement to the non-exclusive of the courts in the Territory. </p>
+  
+  <div class="checkbox">
+    <label>
+      <input id='auth_6' onclick='acceptAllAuths()' type="checkbox" value="">
+      <a>Accept All</a>
+    </label>
+    
+    <div class="sign">
+    </div>
+    <center><p>Sign with your finger.</p></center>
+  </div>   
+  
+  
+  <%= form_for @contact, url: 'step7' do |f| %>
+    <button id='printDocumentsButton' type="submit" class="btn btn-lg btn-block btn-success btn btn-outline-success printDocumentsButton btn_next" >Next ></button>
+    
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this insurance from being saved:</h2>
+  
+        <ul>
+        <% @contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+  <% end %>
+    
+  
+  
+</div>

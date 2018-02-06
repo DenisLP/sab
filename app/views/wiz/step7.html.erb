@@ -1,0 +1,78 @@
+<div class="row">
+  <!--< %= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked'  %>-->
+  <%= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked', percentage: '100%'  %>
+</div>
+
+<hr>
+
+<h1>RUN ROBOTS</h1>
+
+<div class="col-md-12">
+  
+  <div class="checkbox">
+    <label>
+      <input id='script_1' onclick="addUser('')" type="checkbox" value="">
+      <span>SignUp User in the CCC One</span>
+    </label>
+  </div>   
+  
+  <div class="checkbox">
+    <label>
+      <input id='script_2' onclick="addUser('')" type="checkbox" value="">
+      <span>SignUp User in the Nexys</span>
+    </label>
+  </div>   
+  
+  <div class="checkbox">
+    <label>
+      <input id='script_3' onclick="addUser('')" type="checkbox" value="">
+      <span>SignUp User in the QuickBooks</span>
+    </label>
+  </div>   
+  
+  <div class="checkbox">
+    <label>
+      <input id='script_4' onclick="addUser('')" type="checkbox" value="">
+      <span>SignUp User in the Mitchell</span>
+    </label>
+  </div>   
+  
+  <div class="checkbox">
+    <label>
+      <input id='script_5' onclick="addUser('')" type="checkbox" value="">
+      <span>Create Report</span>
+    </label>
+  </div>   
+  
+  <br/>
+  
+  <div class="checkbox">
+    <label>
+      <input id='auth_6' onclick='runAllRobots()' type="checkbox" value="">
+      <a>Run All</a>
+    </label>
+  </div>   
+  
+  <br/>
+  
+  <%= form_for @contact, url: 'step8' do |f| %>
+    <button id='printDocumentsButton' type="submit" class="btn btn-lg btn-success btn btn-outline-success btn_next" >RUN ROBOTS</button>
+    
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this insurance from being saved:</h2>
+  
+        <ul>
+        <% @contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+  <% end %>
+  
+  
+  
+  
+</div>

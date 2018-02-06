@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contact_id: 
+  vehicle_id: 
+  inspection_id: 
+  rentals_id: 
+
+two:
+  contact_id: 
+  vehicle_id: 
+  inspection_id: 
+  rentals_id: 

@@ -1,0 +1,248 @@
+<h1>Message: <%= @message %></h1>
+<div class="row">
+  <!--< %= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked'  %>-->
+  <%= render'steps',  step1_status: 'checked', step2_status: '', step3_status: '', step4_status: '', percentage: '25%'  %>
+</div>
+<br>
+
+
+<!--<div class="row justify-content-center">-->
+<div class="row ">
+  <div class="col-md-12">
+    
+    <!-- CONTACT FORM -->
+    <%= form_for @contact, url: 'step11', method: 'get'  do |f| %>
+    
+      <!-- Erro form -->
+      <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:
+          <ul>
+            <% @contact.errors.full_messages.each do |message| %>
+              <li>
+                <%= message %>
+              </li>
+              <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <!-- End Erro form -->
+
+
+          <!-- LINE 1 - Name -->
+          <div class="row">
+
+            <div class="contact_info col-md-12 d-inline">
+              <label class='display-4'><%= (I18n.t :customer_info)  %></label><br>
+
+              <label>#<%= @contact['id'] %></label>
+              <input id='contact_id' class='form-control' name='contact[id]' type='number' value='<%= @contact['id'] %>' hidden/>
+                
+                <div class="field ">
+                  <%= f.label I18n.t :first_name_abreviation %><br>
+                  <%= select_tag :first_name_abreviation, options_for_select([['Mr.', 0], ['Ms.', 1],['Mrs.', 2], ['Miss.', 3]]), class: 'form-control' %>
+                </div>
+                
+                <div class="field">
+                  <%= f.label I18n.t :first_name %><br>
+                  <%= f.text_field :first_name, class: 'form-control' %>
+                </div>
+
+              <div class="field">
+                <%= f.label I18n.t :last_name %><br>
+                  <%= f.text_field :last_name, class: 'form-control' %>
+              </div>
+              <div class="field">
+                <%= f.label I18n.t :company %><br>
+                  <%= f.text_field :company, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="phone_contact col-md-12 d-inline">
+              
+              <label class='display-4'><%= I18n.t :customer_phone %></label><br>
+              
+              <div class="row">
+                <div class="field col-md-2 ">
+                  <%= f.label I18n.t :phone_1_type %><br>
+                  <%= select_tag :phone_1_type, options_for_select([['Home', 0], ['Work', 1],['Office', 2], ['Other', 3]], 0), class: 'form-control ' %>
+                </div>
+                <div class="field col-md-10">
+                  <%= f.label I18n.t :phone_1_number %><br>
+                  <%= f.text_field :phone_1_number, class: 'form-control ' %>
+                </div>
+              </div>
+              
+              <div class="row phone">
+                <div class="field col-md-2 ">
+                  <%= f.label I18n.t :phone_2_type %><br>
+                  <%= select_tag :phone_2_type, options_for_select([['Home', 0], ['Work', 1],['Office', 2], ['Other', 3]], 1), class: 'form-control ' %>
+                </div>
+                <div class="field col-md-10">
+                  <%= f.label I18n.t :phone_2_number %><br>
+                  <%= f.text_field :phone_2_number, class: 'form-control ' %>
+                </div>
+              </div>
+
+              <div class="row phone-3">
+                <div class="field col-md-2 ">
+                  <%= f.label I18n.t :phone_3_type %><br>
+                  <%= select_tag :phone_3_type, options_for_select([['Home', 0], ['Work', 1],['Office', 2], ['Other', 3]], 2), class: 'form-control ' %>
+                </div>
+                <div class="field col-md-10">
+                  <%= f.label I18n.t :phone_3_number %><br>
+                  <%= f.text_field :phone_3_number, class: 'form-control ' %>
+                </div>
+              </div>
+            </div>
+            <buttom class="btn btn-success rounded" data-toggle="phone2_fields" href="#phone2_fields" aria-expanded="false" aria-controls="phone2_fields">+</buttom>
+          </div>
+
+          <br><br>
+          <label class='display-4'><%= I18n.t :customer_address %></label><br>
+
+          <!-- LINE 1 - Address -->
+          <div class="row">
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_type %><br>
+                <%= select_tag :address_1_type, options_for_select([['Home.', 0], ['Work', 1],['Other', 2],['Workday Home or Office', 3]], 0), class: 'form-control' %>
+            </div>
+            <div class="field col-md-3">
+              <%= f.label I18n.t :address_1_main %><br>
+                <%= f.text_field :address_1_main, class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_extra %><br>
+                <%= f.text_field :address_1_extra, class: 'form-control' %>
+            </div>
+
+            <div class="field col-md-3">
+              <%= f.label I18n.t :address_1_city %><br>
+                <%= f.text_field :address_1_city, class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <!--< %= f.label I18n.t :address_1_state %><br>-->
+              <%= f.label 'State' %><br>
+                <%= select_tag :address_1_state, options_for_select([['MA', 0], ['AL', 1],['AK', 2],['AZ', 3],['AR', 4],['CA', 5],['CO', 6],['CT', 7],['DE', 8]]), class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_zipcode %><br>
+                <%= f.text_field :address_1_zipcode, class: 'form-control' %>
+            </div>
+          </div>
+          <buttom class="btn btn-success rounded" data-toggle="phone2_fields" href="#phone2_fields" aria-expanded="false" aria-controls="phone2_fields">+</buttom>
+          <!-- END LINE 1 -->
+
+
+          <!-- LINE 2 - Address -->
+          <div class="row address-2">
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_type %><br>
+                <%= select_tag :address_1_type, options_for_select([['Home.', 0], ['Work', 1],['Other', 2],['Workday Home or Office', 3]], 1), class: 'form-control' %>
+            </div>
+            <div class="field col-md-3">
+              <%= f.label I18n.t :address_1_main %><br>
+                <%= f.text_field :address_1_main, class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_extra %><br>
+                <%= f.text_field :address_1_extra, class: 'form-control' %>
+            </div>
+
+            <div class="field col-md-3">
+              <%= f.label I18n.t :address_1_city %><br>
+                <%= f.text_field :address_1_city, class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <!--< %= f.label I18n.t :address_1_state %><br>-->
+              <%= f.label 'State' %><br>
+                <%= select_tag :address_1_state, options_for_select([['MA', 0], ['AL', 1],['AK', 2],['AZ', 3],['AR', 4],['CA', 5],['CO', 6],['CT', 7],['DE', 8]]), class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_zipcode %><br>
+                <%= f.text_field :address_1_zipcode, class: 'form-control' %>
+            </div>
+            <buttom class="btn btn-success rounded" data-toggle="phone2_fields" href="#phone2_fields" aria-expanded="false" aria-controls="phone2_fields">+</buttom>
+          </div>
+          <!-- END LINE 2 -->
+
+          <!-- LINE 3 - Address -->
+          <div class="row address-3">
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_type %><br>
+                <%= select_tag :address_1_type, options_for_select([['Home.', 0], ['Work', 1],['Other', 2],['Workday Home or Office', 3]]), class: 'form-control' %>
+            </div>
+            <div class="field col-md-3">
+              <%= f.label I18n.t :address_1_main %><br>
+                <%= f.text_field :address_1_main, class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_extra %><br>
+                <%= f.text_field :address_1_extra, class: 'form-control' %>
+            </div>
+
+            <div class="field col-md-3">
+              <%= f.label I18n.t :address_1_city %><br>
+                <%= f.text_field :address_1_city, class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <!--< %= f.label I18n.t :address_1_state %><br>-->
+              <%= f.label 'State' %><br>
+                <%= select_tag :address_1_state, options_for_select([['MA', 0], ['AL', 1],['AK', 2],['AZ', 3],['AR', 4],['CA', 5],['CO', 6],['CT', 7],['DE', 8]]), class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_zipcode %><br>
+                <%= f.text_field :address_1_zipcode, class: 'form-control' %>
+            </div>
+            <buttom class="btn btn-success rounded" data-toggle="phone2_fields" href="#phone2_fields" aria-expanded="false" aria-controls="phone2_fields">+</buttom>
+          </div>
+          <!-- END LINE 3 -->
+
+          <!-- LINE 4 - Address -->
+          <div class="row address-4">
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_type %><br>
+                <%= select_tag :address_1_type, options_for_select([['Home.', 0], ['Work', 1],['Other', 2],['Workday Home or Office', 3]]), class: 'form-control' %>
+            </div>
+            <div class="field col-md-3">
+              <%= f.label I18n.t :address_1_main %><br>
+                <%= f.text_field :address_1_main, class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_extra %><br>
+                <%= f.text_field :address_1_extra, class: 'form-control' %>
+            </div>
+
+            <div class="field col-md-3">
+              <%= f.label I18n.t :address_1_city %><br>
+                <%= f.text_field :address_1_city, class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <!--< %= f.label I18n.t :address_1_state %><br>-->
+              <%= f.label 'State' %><br>
+                <%= select_tag :address_1_state, options_for_select([['MA', 0], ['AL', 1],['AK', 2],['AZ', 3],['AR', 4],['CA', 5],['CO', 6],['CT', 7],['DE', 8]]), class: 'form-control' %>
+            </div>
+            <div class="field col-md-1">
+              <%= f.label I18n.t :address_1_zipcode %><br>
+                <%= f.text_field :address_1_zipcode, class: 'form-control' %>
+            </div>
+            <buttom class="btn btn-success rounded" data-toggle="phone2_fields" href="#phone2_fields" aria-expanded="false" aria-controls="phone2_fields">+</buttom>
+          </div>
+          <!-- END LINE 4 -->
+
+          <hr>
+          <br>
+
+          <div class="row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-lg btn-block btn-success btn btn-outline-success" action='<%= wiz_step2_path(@contact) %>'>Next ></button>
+            </div>
+          </div>
+    
+
+    <% end %>
+    <!-- END CONTACT FORM -->
+
+  </div>
+
+</div>

@@ -1,0 +1,149 @@
+<div id='vehicle_modal' class='row' style='display: none'>
+  
+  <div class="col-md-10">
+
+    <div class="row">
+    
+      <div class="col-md-4">
+        
+        <div class="field">
+          <%= label_tag :vin %><br>
+          <%= text_field_tag :vin, nil, readonly: true %>
+        </div>
+        <!--<div class="field">-->
+        <!--  < %= label_tag :vehicle %><br>-->
+        <!--  < %= text_field_tag :vehicle, nil, readonly: true %>-->
+        <!--</div>-->
+        <div class="field">
+          <%= label_tag :year %><br>
+          <%= text_field_tag :year, nil, readonly: true %>
+        </div>
+        <div class="field">
+          <%= label_tag :make %><br>
+          <%= text_field_tag :make, nil, readonly: true %>
+        </div>
+        <div class="field">
+          <%= label_tag :model %><br>
+          <%= text_field_tag :model %>
+        </div>
+          
+      </div>
+      
+      <div class="col-md-4">
+        <div class="field">
+          <%= label_tag :job_number %><br>
+          <%= text_field_tag :job_number, nil, readonly: true %>
+        </div>
+        <div class="field">
+          <%= label_tag :trim_code %><br>
+          <%= text_field_tag :trim_code, nil, readonly: true %>
+        </div>
+        <div class="field">
+          <%= label_tag :paint_code %><br>
+          <%= text_field_tag :paint_code, nil, readonly: true %>
+        </div>
+        <div class="field">
+          <%= label_tag :primary_impact %><br>
+          <%= text_field_tag :primary_impact, nil, readonly: true %>
+        </div>
+        
+      </div>
+      
+      <div class="col-md-4">
+        STATUS:
+        <div class="vehicle_status">
+          <form class='form-group'>
+            <select class="selectpicker form-control">
+              <option class='vehicle_cell_status_contact_customer'>Contact Customer</option>
+              <option class='vehicle_cell_status_final_qc'>Final QC</option>
+              <option class='vehicle_cell_status_refinish'>Refinish - Parts hold</option>
+              <option class='vehicle_cell_status_detail'>Detail</option>
+              <option class='vehicle_cell_status_sublet'>Sublet</option>
+              <option class='vehicle_cell_status_reassembly'>Reassembly</option>
+              <option class='vehicle_cell_status_paint'>Paint</option>
+              <option class='vehicle_cell_status_body'>Body</option>
+              <option class='vehicle_cell_status_ready'>Ready</option>
+              <option class='vehicle_cell_status_mechanical'>Mechanical</option>
+              <option class='vehicle_cell_status_waiting_parts'>Waiting Parts</option>
+              <option class='vehicle_cell_status_waiting_approval'>Waiting Approval</option>
+              <option class='vehicle_cell_status_sup_hold'>Sup hold</option>
+              <option class='vehicle_cell_status_repair_plan'>Repair Plan</option>
+              <option class='vehicle_cell_status_check_in'>Check In</option>
+              <option class='vehicle_cell_status_prime'>Prime</option>
+              <option class='vehicle_cell_status_frame'>Frame</option>
+              <option class='vehicle_cell_status_delivered'>Delivered</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      
+      <div class="col-md-12">
+        
+        <div class="field">
+          <%= label_tag :impact_note %><br>
+          <%= text_area_tag :impact_note, nil, readonly: true %>
+        </div>
+        <div class="field">
+          <%= label_tag :prior_damage_note %><br>
+          <%= text_area_tag :prior_damage_note , nil, readonly: true %>
+        </div>
+        
+        <!--<div class="field">-->
+        <!--  < %= label_tag :id %><br>-->
+        <!--  < %= text_field_tag :id , nil, readonly: true %>-->
+        <!--</div>-->
+        
+        <button type='button' class='btn btn-danger btn-block btn-lg' onclick='closeVehicleModal()'>close</button>
+      </div>
+    
+    </div><!--END ROW-->
+    
+  </div><!--END COL-MD-10-->
+  
+  <div class="col-md-2">
+    
+    <div class="vehicle_panels">
+      <label><strong>Front</strong></label>
+      <form name='front'>
+        <label><input type="checkbox" name="Hood" value="Hood"/>Hood</label><br>
+        <label><input type="checkbox" name="Grill" value="Grill"/>Grill</label><br>
+        <label><input type="checkbox" name="Head-Lamp" value="Head Lamp"/>Head Lamp</label><br>
+        <label><input type="checkbox" name="Bumper" value="Bumper"/>Bumper</label><br>
+      </form>
+      
+      <label><strong>Back</strong></label>
+      <form name="back">
+        <label><input type="checkbox" name="back" value="Tail Lights"/>Tail Lights</label><br>
+        <label><input type="checkbox" name="back" value="Trunk Lids"/>Trunk Lids</label><br>
+        <label><input type="checkbox" name="back" value="Step Bumpers"/>Step Bumpers</label><br>
+      </form>
+      
+      <label><strong>Left</strong></label>
+      <form name="left">
+        <label><input type="checkbox" name="left" value="Front Door"/>Front Door</label><br>
+        <label><input type="checkbox" name="left" value="Front Hang Door"/>Front Hang Door</label><br>
+        <label><input type="checkbox" name="left" value="Front Trim"/>Front Trim</label><br>
+        <label><input type="checkbox" name="left" value="Front Wing"/>Front Wing</label><br>
+        <label><input type="checkbox" name="left" value="Back Door"/>Back Door</label><br>
+        <label><input type="checkbox" name="left" value="Back Hang Door"/>Back Hang Door</label><br>
+        <label><input type="checkbox" name="left" value="Back Trim"/>Back Trim</label><br>
+        <label><input type="checkbox" name="left" value="Back Wing"/>Back Wing</label><br>
+      </form>
+      
+      <label><strong>Rigth</strong></label>
+      <form name="rigth">
+        <label><input type="checkbox" name="left" value="Front Door"/>Front Door</label><br>
+        <label><input type="checkbox" name="left" value="Front Hang Door"/>Front Hang Door</label><br>
+        <label><input type="checkbox" name="left" value="Front Trim"/>Front Trim</label><br>
+        <label><input type="checkbox" name="left" value="Front Wing"/>Front Wing</label><br>
+        <label><input type="checkbox" name="left" value="Back Door"/>Back Door</label><br>
+        <label><input type="checkbox" name="left" value="Back Hang Door"/>Back Hang Door</label><br>
+        <label><input type="checkbox" name="left" value="Back Trim"/>Back Trim</label><br>
+        <label><input type="checkbox" name="left" value="Back Wing"/>Back Wing</label><br>
+      </form>
+      
+    </div>
+  
+  </div>
+  
+</div>

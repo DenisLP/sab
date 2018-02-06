@@ -1,0 +1,14 @@
+<div id='<%= id %>' class="vehicle_cell vehicle_missing_isle" draggable="true" ondragstart="dragstart_handler(event);">
+  <span class='vehicle_cell_status_signal vehicle_cell_status_contact_customer'></span>
+  <h4 class='vehicle_cell_id'><%= id %></h4>
+  <h5 class='vehicle_cell_model'><%= model %></h5>
+  <h4 class='vehicle_cell_year'><%= year %></h4>
+  <span class='vehicle_cell_make'><%= make %> - <%= date_start %> days</span>
+  <span><%= client_name %></span>
+  <input type='text' id='vehicle_cell_status' hidden value=<%= vehicle_status %>></input>
+  
+  <button type='button' class='btn btn-primary btn-lg' onclick="openVehicleModal('<%= id %>','<%= vin %>', '<%= model %>', '<%= year %>', '<%= make %>', '<%= job_number %>', '<%= trim_code %>', '<%= paint_code %>', '<%= primary_impact %>', '<%= impact_note %>', '<%= prior_damage_note %>')">+</button>
+  
+</div>
+
+<%= render 'vehicle_modal' %>

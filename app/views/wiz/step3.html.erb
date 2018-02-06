@@ -1,0 +1,174 @@
+<h1>Message: <%= @message %></h1>
+<div class="row">
+  <!--< %= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked'  %>-->
+  <%= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: '', percentage: '75%'  %>
+</div>
+
+
+<!--<div class="row justify-content-center">-->
+<div class="row ">
+  <div class="col-md-12">
+    <%= form_for @vehicle, url: 'step4' do |f| %>
+      <% if @vehicle.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+    
+          <ul>
+          <% @vehicle.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <br>
+    <button type="submit" class="btn btn-lg btn-block btn-success btn btn-outline-success" >Next ></button>
+    
+    <!-- LINE 1 -->
+    <div class="d-flex flex-row justify-content-center">
+      <div class="car-top-view">
+        <%= image_tag 'car-top-view.png', class: 'car-top-view-img ' %>
+      </div>
+      <div class="d-flex flex-column justify-content-center">
+        <div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('11')" value='11'>11</button>
+          <%= link_to image_tag(@photo.image.url, id: 'vehicle[p11]', name: 'vehicle_p11', class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div>
+        <div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('10')">10</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div>
+        <div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('9')">09</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div>
+        <div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('8')">08</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div>
+        <div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('7')">07</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div>
+      </div>
+      
+      <div class="d-flex flex-column justify-content-center">
+        <div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('12')">12</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div>
+        <br><br><br>
+        <br>
+        <div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('13')">13</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div>
+        <br><br><br>
+        <div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('6')">06</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div>
+      </div>
+      
+      <div class="d-flex flex-column justify-content-center">
+        <div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('1')">01</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div><div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('2')">02</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div><div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('3')">03</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div><div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('4')">04</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div><div class="">
+          <button class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('5')">05</button>
+          <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+        </div>
+      </div>
+    </div>
+    
+    <br><br>
+    
+    <input type='file' class='btn btn-lg btn-success btn btn-outline-success btn-photo' type='button' onclick= "upload_photo('11')" />
+    <%= link_to image_tag(@photo.image.url, class: 'media-object vehicle_photo'), @photo.image.url, target: '_blank' %>
+   
+    <div class="d-flex flex-column">
+      
+      <div class="row">
+        
+        <div class="col-md-6">
+          <div class="field">
+            <%= f.label :fuel %><br>
+            <%= radio_button_tag(:fuel, "1/4") %>
+            <%= label_tag(:age_child, "1/4") %>
+            <%= radio_button_tag(:fuel, "2/4") %>
+            <%= label_tag(:age_child, "2/4") %>
+            <%= radio_button_tag(:fuel, "3/4") %>
+            <%= label_tag(:age_child, "3/4") %>
+            <%= radio_button_tag(:fuel, "4/4") %>
+            <%= label_tag(:age_child, "4/4") %>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="field">
+            <%= f.label :mileage_in, class: 'form-control' %><br>
+            <%= number_field :vehicle, :mileage_in, class: 'form-control', value: '37.000' %>
+          </div>
+        </div>
+        
+      </div><!-- END ROW-->
+        
+      <div class="field">
+        <%= f.label :impact_note %><br>
+        <%= f.text_area :impact_note, class: 'form-control' %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :prior_damage_note %><br>
+        <%= f.text_area :prior_damage_note, class: 'form-control' %>
+      </div>
+    </div>
+    <!--END LINE 1 -->
+      
+    
+    <hr>
+    <br>
+    
+    <div hidden><!-- CAMPOS -->
+      <input class='form-control' id='contact_id' name='contact[id]' type='number' value='<%= @contact['id'] %>' readonly/><br>
+      <input class='form-control' id='contact_first_name' name='contact[first_name]' type='text' value='<%= @contact['first_name'] %>' readonly/><br>
+      <input class='form-control' id='contact_phone_1_number' name='contact[phone_1_number]' type='text' value='<%= @contact['phone_1_number'] %>' readonly/><br>
+      <input class='form-control' id='vehicle_vin' name='vehicle[vin]' type='text' value='<%= @vehicle['vin'] %>' readonly/><br>
+      <input class='form-control' id='agent_pin' name='agent_pin' type='text' value='<%= @agent_pin %>' readonly/><br>
+    </div><!-- END CAMPOS -->
+    
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <button type="button" onclick="window.history.back();" class="btn btn-lg btn-block btn-success btn btn-outline-secondary" >< Back</button>
+      </div>
+      <div class="col-md-8">
+        <button type="submit" class="btn btn-lg btn-block btn-success btn btn-outline-success" >Next ></button>
+      </div>
+    </div>
+    <hr >
+    
+  <% end %>
+  </div>
+</div>
+
+
+
+ <!-- UPLOAD PHOTO -->
+    <div>
+      <%= form_for @photo do |f| %>
+        <div class="form-group">
+          <%= f.file_field :image, class: 'form-control'%>
+        </div>
+        <%= f.submit 'Upload', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+    <!-- END UPLOAD PHOTO -->

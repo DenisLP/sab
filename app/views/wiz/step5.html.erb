@@ -1,0 +1,45 @@
+<div class="row">
+  <!--< %= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked'  %>-->
+  <%= render'steps',  step1_status: 'checked', step2_status: 'checked', step3_status: 'checked', step4_status: 'checked', percentage: '100%'  %>
+</div>
+
+<div class="row" >
+  <div class="card-body">
+    <p class="display-1">100%</p>
+    <p class="display-2">You are all set!</p>
+    <!--<hr>-->
+    <!--<p class="display-4">Return this device to agent, please.</p>-->
+    <!--< %= form_for @contact, url: print_documents_index_path, method: 'post'  do |f| %>-->
+      <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+          <ul>
+            <% @contact.errors.full_messages.each do |message| %>
+              <li>
+                <%= message %>
+              </li>
+              <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <%= form_for @contact, url: 'step6' do |f| %>
+      <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this insurance from being saved:</h2>
+    
+          <ul>
+          <% @contact.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <button type="submit" class="btn btn-lg btn-block btn-success btn btn-outline-success btn_next" >Next ></button>
+    <% end %>
+    
+    <!--< % end %>-->
+    
+    
+  </div>
+</div>

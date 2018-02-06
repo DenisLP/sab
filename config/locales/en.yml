@@ -20,4 +20,26 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  customer_info: 'Customer Information'
+  first_name_abreviation: 'Sir.'
+  first_name: 'First name'
+  last_name: 'Last name'
+  company: 'Company'
+  
+  customer_phone: 'Phone numbers'
+  phone_1_type: 'Type'
+  phone_1_number: 'Phone Number'
+  phone_2_type: 'Type'
+  phone_2_number: 'Phone Number'
+  phone_3_type: 'Type'
+  phone_3_number: 'Phone Number'
+  
+  
+  customer_address: 'Address'
+  address_1_type: 'Type'
+  address_1_main: 'Address'
+  address_1_extra: 'Extra'
+  address_1_city: 'City'
+  address_1_state: 'State'
+  address_1_zipcode: 'Zipode'
+  

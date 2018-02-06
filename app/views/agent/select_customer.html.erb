@@ -1,0 +1,63 @@
+<h2><%= @message %></h2>
+Agent<h4><%= @agent %></h4>
+PIN<h4><%= @pin %></h4>
+
+<p id="notice"><%= notice %></p>
+
+  
+  <h2>Customer</h2>
+  
+  <div class="row">
+    <div class="col-md-12">
+      
+      <div class="form-group">
+        <select class="selectpicker" data-width="100%">
+          <% @contacts.each do |contact| %>
+            <option><%= contact.id %> # <%= contact.first_name %> <%= contact.last_name %> <%= contact.phone_1_number %></option>
+          <% end %>
+        </select>
+      </div>
+      
+    </div>
+  </div>
+  
+
+<br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<h1>Listing Contacts</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th colspan="4"></th>
+      <th>STATUS</th>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Phone 1 number</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to 'Get', wiz_step2_path(contact) %></td>
+        <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Del', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>Signed Up</td>
+        <td><%= contact.id %></td>
+        <td>Signing up</td>
+        <td><%= contact.first_name %></td>
+        <td><%= contact.last_name %></td>
+        <td><%= contact.phone_1_number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>

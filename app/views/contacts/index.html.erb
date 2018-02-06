@@ -2,9 +2,12 @@
 
 <h1>Listing Contacts</h1>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
+      <th colspan="4"></th>
+      <th>STATUS00</th>
+      <th>ID</th>
       <th>Contact type</th>
       <th>Company</th>
       <th>First name abreviation</th>
@@ -47,13 +50,18 @@
       <th>Priority</th>
       <th>Primary referral</th>
       <th>Secondary referral</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
+        <td><%= link_to 'Step2', wiz_step2_path(contact) %></td>
+        <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>Signed Up</td>
+        <td><%= contact.id %></td>
         <td><%= contact.contact_type %></td>
         <td><%= contact.company %></td>
         <td><%= contact.first_name_abreviation %></td>
@@ -96,9 +104,6 @@
         <td><%= contact.priority %></td>
         <td><%= contact.primary_referral %></td>
         <td><%= contact.secondary_referral %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

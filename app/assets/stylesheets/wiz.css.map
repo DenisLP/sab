@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,aAAc;EACZ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;;AAGd,EAAG;EACD,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI",
+"sources": ["wiz.scss"],
+"names": [],
+"file": "wiz.css"
+}

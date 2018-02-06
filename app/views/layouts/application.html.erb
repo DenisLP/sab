@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>SAB</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/css/bootstrap-material-design.min.css" integrity="sha384-k5bjxeyx3S5yJJNRD1eKUMdgxuvfisWKku5dwHQq9Q/Lz6H8CyL89KF52ICpX4cL" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.css" />
+  
 </head>
 <body>
-<div class="container">
-  <hr></hr>
-  <div class="btn-group">
-    <%= link_to 'Home', root_path, class: 'btn btn-primary btn-lg ' %>
-    <%= link_to 'Contacts', contacts_path, class: 'btn btn-primary btn-lg ' %>
-    <!--< %= link_to 'New Contact', new_contact_path, class: 'btn btn-primary btn-lg ' %>-->
-    <%= link_to 'Insurances', insurances_path, class: 'btn btn-primary btn-lg ' %>
-    <!--< %= link_to 'New Insurance', new_insurance_path, class: 'btn btn-primary btn-lg ' %>-->
-    <%= link_to 'Inspections', inspections_path, class: 'btn btn-primary btn-lg ' %>
-    <!--< %= link_to 'New Inspection', new_inspection_path, class: 'btn btn-primary btn-lg ' %>-->
-    <%= link_to 'Rentals', rentals_path, class: 'btn btn-primary btn-lg ' %>
-    <!--< %= link_to 'New Rental', new_rental_path, class: 'btn btn-primary btn-lg ' %>-->
-    <%= link_to 'Vehicles', vehicles_path, class: 'btn btn-primary btn-lg ' %>
-    <!--< %= link_to 'New Vehicle', new_vehicle_path, class: 'btn btn-primary btn-lg ' %>-->
-    <%= link_to 'Chronos', chronos_index_path, class: 'btn btn-primary btn-lg ' %>
+  <div class="container">
+    <hr>
+    
+    <%= yield %>
+    
+    <hr>
+    <br><br><br><br><br><br>
+    <!--<div class="btn-group menu_temp">-->
+    <!--  <sub>temporary</sub>-->
+    <!--  < %= link_to 'H', root_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'Cont', contacts_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'NCont', new_contact_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'Ins', insurances_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'NIns', new_insurance_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'Insp', inspections_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'NInsp', new_inspection_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'Rent', rentals_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'NRent', new_rental_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'Vehi', vehicles_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'NVehi', new_vehicle_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--  < %= link_to 'Chronos', chronos_index_path, class: 'btn btn-primary btn-lg ' %>-->
+    <!--</div>-->
+    
   </div>
-  <hr></hr>
-  <%= yield %>
-</div>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/popper.js@1.12.5/dist/umd/popper.js" integrity="sha384-KlVcf2tswD0JOTQnzU4uwqXcbAy57PvV48YUiLjqpk/MJ2wExQhg9tuozn5A1iVw" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/js/bootstrap-material-design.js" integrity="sha384-hC7RwS0Uz+TOt6rNG8GX0xYCJ2EydZt1HeElNwQqW+3udRol4XwyBfISrNDgQcGA" crossorigin="anonymous"></script>
+  <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+  
+  <!--Bootstrap Selection-->
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>-->
+
 
 </body>
+
+
 </html>

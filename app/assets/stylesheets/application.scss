@@ -10,5 +10,165 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  */
-@import "bootstrap";
-// @import "bootstrap-sprockets";
+// html {
+  // background-image: url('https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAvMAAAAJDU1YjMxM2NjLWZhNjEtNDZjMy1hNDQwLWY0MDdiMzM3NjI5ZA.jpg');
+// }
+ 
+body {
+  background-color: rgba(255,255,255,0.9) !important;
+} 
+ 
+.btn-photo {
+    margin: 5px;
+}
+
+.car-top-view {
+  height: 100px;
+  width: auto;
+}
+
+.car-top-view-img {
+  height: 400px;
+}
+
+.red-line {
+  background: #de0000;
+  height: 20px;
+  margin-top: 20px;
+}
+
+.welcome-modal {
+  margin: 20px;
+  padding: 20px;
+}
+
+.phone-2 {
+  
+}
+.phone-3 {
+  display: none !important;
+}
+
+.address-2 {
+  display: none !important;
+}
+.address-3 {
+  display: none !important;
+}
+.address-4 {
+  display: none !important;
+}
+
+.vehicle_info_column_two {
+  display: none !important;
+}
+
+
+// CHRONOS CSS
+
+.chronos_line {
+  border-left: 2px #cccccc solid;
+  text-align: center;
+}
+
+.vehicle_cell {
+  background: #eeeeee;
+  margin-bottom: 5px;
+  border: 2px #ccc solid;
+}
+
+.vehicle_cell_status_working {
+  background: #5cb85c; color: #fff;
+}
+
+#vehicle_modal {
+  z-index: 2;
+}
+
+
+// CHRONOS STAUTS
+.vehicle_cell_status_contact_customer { background: #5176ab ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_final_qc { background: #75a3bb ; color: #ffffff; margin: 5px;}
+.vehicle_cell_status_refinish { background: #345e60 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_detail { background: #cb601d ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_sublet { background: #d18e49 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_reassembly { background: #385b20 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_paint { background: #86b25a ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_body { background: #835909 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_ready { background: #d2a92f ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_mechanical { background: #4b696c ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_waiting_parts { background: #a52329 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_waiting_approval { background: #af5755 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_sup_hold { background: #352726 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_repair_plan { background: #847069 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_check_in { background: #801b39 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_prime { background: #92646f ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_frame { background: #4d1733 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+.vehicle_cell_status_delivered { background: #764965 ; color: #ffffff; margin: 5px; border-radius: 10px;}
+
+.vehicle_cell_status_signal {
+  border-radius: 100px;
+  position: relative;
+  float: left;
+  min-width: 30px;
+  min-height: 30px
+}
+
+.bmd-form-group {
+  padding-top: 0px !important;
+}
+
+.vehicle_photo {
+  max-width: 20px;
+  max-height: 20px;
+  
+}
+
+// Vehicle Modal
+#vehicle_modal {
+  position: fixed;
+  min-width: 99%;
+  min-height: 99%;
+  top: 1%;
+  left: 1%;
+  padding: 0%;
+  background: rgba(230, 230, 230, 0.9);
+}
+
+.vehicle_panels {
+  text-align: left;
+  overflow: auto;
+}
+
+#impact_note {
+  width: 100%;
+}
+#prior_damage_note  {  
+  width: 100%;
+}
+
+.sign {
+  min-width: 400px;
+  min-height: 200px;
+  border: 4px solid #000;
+  background: white;
+}
+
+.menu_temp {
+  font-size: 6pt;
+}
+
+.customer_login {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  background: white;
+  z-index: 100;
+}
+
+.question {
+  font-size: 18pt !important;
+}
+.crash_answer {
+  min-width: 100%;
+}
